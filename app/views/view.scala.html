@@ -1,17 +1,13 @@
-@(pasteForm: Form[Paste])
-    @implicitFieldConstructor = @{
-        helper.FieldConstructor(bootstrapInputRenderer.render)
-    }
+@(paste: Paste)
 
 
 @default("gBin") {
 
     <form>
-
-       <h3>@pasteForm("guid").value</h3>     <a href="@controllers.routes.PasteController.raw(pasteForm("guid").value)">View Raw</a>
-        <pre class="prettyprint" class="form-control" rows="20">@pasteForm("content").value</pre>
+        <h3>@paste.guid</h3>
+        <a href="@controllers.routes.PasteController.raw(paste.guid)">View Raw</a>
+        <pre class="prettyprint" class="form-control" rows="20">@paste.content)</pre>
     </form>
-
 
     <a href="@controllers.routes.PasteController.list()">Back</a>
 

@@ -27,13 +27,12 @@ public class PasteController extends Controller {
 
     public static Result view(String guid) {
         Paste paste = (Paste)new Model.Finder(String.class, Paste.class).where().eq("guid", guid).findUnique();
-        Form<Paste> form = Form.form(Paste.class).fill(paste);
-        return ok(view.render(form));
+        return ok(view.render(paste));
     }
 
     public static Result raw(String guid) {
         Paste paste = (Paste)new Model.Finder(String.class, Paste.class).where().eq("guid", guid).findUnique();
-        return ok(paste.getContent());
+        return ok(paste.content);
     }
 
     public static Result list() {

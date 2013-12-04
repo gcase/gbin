@@ -5,7 +5,7 @@
 
     <ul>
     @for(p <- pastes) {
-        <li><a href="@routes.PasteController.view(p.getGuid())">@p.getGuid)</a></li>
+        <li><a href="@routes.PasteController.view(p.guid)">@p.guid)</a></li>
     }
     </ul>
 
