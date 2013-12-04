@@ -1,14 +1,14 @@
 @(pastes: List[Paste])
 
 
-@default("gBin") {
-
-    <ul>
+@main("gBin") {
+    <h2>Recent Pastes:</h2>
+    <ul class="list-group">
     @for(p <- pastes) {
-        <li><a href="@routes.PasteController.view(p.guid)">@p.guid</a></li>
+        <li class="list-group-item"><a href="@routes.PasteController.view(p.guid)">@p.guid</a></li>
     }
     </ul>
 
 
-    <a href="@routes.PasteController.newPaste()">New Paste</a>
+    <a class="btn btn-primary" href="@routes.PasteController.newPaste()">New Paste</a>
 }

@@ -1,5 +1,10 @@
 @(message: String)
 
 @main("gBin") {
-    This is some content.
+
+    <p>This is a dumb little pastebin type utility I made to teach myself the Play Framework.</p>
+
+    <h3><a href="@controllers.routes.PasteController.list()">View Recent Pastes</a></h3>
+    <h3><a href="@controllers.routes.PasteController.newPaste()">Create a New Paste</a></h3>
+
 }

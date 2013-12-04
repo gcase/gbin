@@ -2,7 +2,7 @@
 @implicitFieldConstructor = @{ helper.FieldConstructor(bootstrapInputRenderer.render) }
 
 
-@default("gBin") {
+@main("gBin") {
     @message.toUpperCase
 
     @helper.form(action = routes.PasteController.addPaste(), '_role -> "form") {

@@ -1,14 +1,20 @@
 @(paste: Paste)
 
 
-@default("gBin") {
+@main("gBin") {
 
-    <form>
-        <h3>@paste.guid</h3>
-        <a href="@controllers.routes.PasteController.raw(paste.guid)">View Raw</a>
-        <pre class="prettyprint" class="form-control" rows="20">@paste.content)</pre>
-    </form>
 
-    <a href="@controllers.routes.PasteController.list()">Back</a>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">@paste.guid</h3>
+        </div>
+        <div class="panel-body">
+            <pre class="prettyprint">@paste.content</pre>
+            <a href="@controllers.routes.PasteController.raw(paste.guid)">View Raw</a>
+        </div>
+    </div>
+
+
+    <a href="@controllers.routes.PasteController.list()">Back to Recent Pastes</a>
 
 }
