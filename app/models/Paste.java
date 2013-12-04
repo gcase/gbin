@@ -2,6 +2,7 @@ package models;
 
 import play.db.ebean.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
@@ -14,6 +15,7 @@ public class Paste extends Model {
 
     private String guid;
 
+    @Column(length = 2000)
     private String content;
 
     public Paste() {
