@@ -7,7 +7,7 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   "org.webjars" %% "webjars-play" % "2.2.0",
-  "org.webjars" % "bootstrap" % "3.0.1"
+  "org.webjars" % "bootstrap" % "3.0.2"
 )     
 
 play.Project.playJavaSettings

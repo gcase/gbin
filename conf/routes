@@ -3,9 +3,18 @@
 # ~~~~
 
 # Home page
-GET        /                     controllers.Application.index()
+GET         /                     controllers.Application.index()
+
+GET         /pastes               controllers.PasteController.list()
+GET         /pastes/new           controllers.PasteController.newPaste()
+GET         /pastes/:guid.raw         controllers.PasteController.raw(guid: String)
+GET         /pastes/:guid         controllers.PasteController.view(guid: String)
+GET         /pastes.json          controllers.PasteController.jsonList()
+POST        /pastes               controllers.PasteController.addPaste()
+
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file         controllers.Assets.at(path="/public", file)
+GET         /assets/*file         controllers.Assets.at(path="/public", file)
 
-GET        /webjars/*file        controllers.WebJarAssets.at(file)
+GET         /webjars/*file        controllers.WebJarAssets.at(file)

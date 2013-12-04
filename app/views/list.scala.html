@@ -1,0 +1,14 @@
+@(pastes: List[Paste])
+
+
+@default("gBin") {
+
+    <ul>
+    @for(p <- pastes) {
+        <li><a href="@routes.PasteController.view(p.getGuid())">@p.getGuid)</a></li>
+    }
+    </ul>
+
+
+    <a href="@routes.PasteController.newPaste()">New Paste</a>
+}

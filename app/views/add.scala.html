@@ -1,0 +1,13 @@
+@(message: String, pasteForm: Form[Paste])
+@implicitFieldConstructor = @{ helper.FieldConstructor(bootstrapInputRenderer.render) }
+
+
+@default("gBin") {
+    @message.toUpperCase
+
+    @helper.form(action = routes.PasteController.addPaste(), '_role -> "form") {
+
+        @helper.textarea(pasteForm("content"), '_label -> "Paste What:", 'rows -> "20", 'class -> "form-control")
+
+        <input type="submit" class="btn btn-primary"/>
+    }}
