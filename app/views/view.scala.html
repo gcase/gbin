@@ -10,7 +10,10 @@
         </div>
         <div class="panel-body">
             <pre class="prettyprint">@paste.content</pre>
-            <a href="@controllers.routes.PasteController.raw(paste.guid)">View Raw</a>
+            <div class="btn-group">
+            <a class="btn btn-default" href="@controllers.routes.PasteController.raw(paste.guid)">View Raw</a>
+            <a class="btn btn-default" href="@controllers.routes.PasteController.json(paste.guid)">View JSON</a>
+                         </div>
         </div>
     </div>
 

@@ -4,9 +4,10 @@
 # --- !Ups
 
 create table paste (
-  id                        varchar(255) not null,
+  id                        bigint not null,
   guid                      varchar(255),
-  content                   varchar(2000),
+  content                   TEXT,
+  date_created              timestamp,
   constraint pk_paste primary key (id))
 ;
 

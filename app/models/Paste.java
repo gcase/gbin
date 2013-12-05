@@ -1,5 +1,6 @@
 package models;
 
+import org.joda.time.DateTime;
 import play.db.ebean.Model;
 
 import javax.persistence.Column;
@@ -11,15 +12,18 @@ import java.util.UUID;
 public class Paste extends Model {
 
     @Id
-    public String id;
+    public Long id;
 
     public String guid;
 
-    @Column(length = 2000)
+    @Column(columnDefinition = "TEXT")
     public String content;
+
+    public DateTime dateCreated;
 
     public Paste() {
         this.guid = UUID.randomUUID().toString();
+        this.dateCreated = DateTime.now();
     }
 
 }
